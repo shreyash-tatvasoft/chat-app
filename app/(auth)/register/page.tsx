@@ -1,8 +1,11 @@
 "use client"
 
 import AuthForm from '@/app/components/AuthForm';
+import { useRouter } from 'next/navigation';
 
 export default function Register() {
+
+  const router = useRouter()
 
   const handleRegister = async (email : string, password: string, username?: string)  => {
 
@@ -16,7 +19,10 @@ export default function Register() {
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(form),
     });
-    if (res.ok) alert('Registered Successfully');
+    if (res.ok){
+      alert('Registered Successfully')
+      router.push("/login")
+    }
     else alert('Error in Registration');
   };
 

@@ -32,7 +32,7 @@ const ThemeToggle = () => {
   return (
       <button
         onClick={handleToggle}
-        className="relative w-20 h-10 bg-indigo-500 dark:bg-indigo-800 rounded-full transition-all cursor-pointer"
+        className="relative w-20 h-10 bg-blue-500 rounded-full transition-all cursor-pointer"
       >
         <div
           className={`absolute top-1 w-8 h-8 bg-white dark:bg-gray-800 rounded-full shadow-md transform transition-transform ${

@@ -1,24 +1,7 @@
 import bcrypt from 'bcryptjs';
 import { connectDB } from '../../../server/db/connectDB';
 import User from '../../../server/models/userModel';
-import { NextApiRequest, NextApiResponse } from 'next';
 import { ApiResponse } from '@/app/utils/helper';
-
-// export default async function POST(req: Request, res: NextApiResponse) {
-//   if (req.method !== 'POST') return ApiResponse(405, { message : "Server Error"} )
-
-//   await connectDB();
-//   const { username, email, password } = await req.json();
-
-//   const existingUser = await User.findOne({ email });
-//   if (existingUser) return ApiResponse(505, { message : "Server Error"} )
-
-//   const hashedPassword = await bcrypt.hash(password, 10);
-//   const newUser = new User({ username, email, password: hashedPassword });
-//   await newUser.save();
- 
-//   return ApiResponse(201, { message: 'User registered successfully'} )
-// }
 
 export async function POST(request: Request) {
   const { username, email, password } = await request.json();
