@@ -75,7 +75,6 @@ export default function AuthForm({ type, onSubmit }: AuthFormProps) {
       return false;
     }
 
-    console.log("first", formState)
     
     onSubmit(formState.email, formState.password, formState.username)
   }

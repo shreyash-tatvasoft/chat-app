@@ -1,6 +1,7 @@
 "use client"
 
 import AuthForm from '@/app/components/AuthForm';
+import { ROUTES } from '@/app/utils/constant';
 import { useRouter } from 'next/navigation';
 
 export default function Register() {
@@ -21,7 +22,7 @@ export default function Register() {
     });
     if (res.ok){
       alert('Registered Successfully')
-      router.push("/login")
+      router.push(ROUTES.LOGIN)
     }
     else alert('Error in Registration');
   };

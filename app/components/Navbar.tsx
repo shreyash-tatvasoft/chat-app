@@ -3,6 +3,7 @@ import React from 'react'
 import ThemeToggle from './ThemeToggle';
 import { useSession, signOut } from "next-auth/react";
 import { useRouter } from 'next/navigation';
+import { ROUTES } from '../utils/constant';
 
 const Navbar = () => {
 
@@ -12,12 +13,12 @@ const Navbar = () => {
 
     const handleLogout = async () => {
         await signOut({ redirect: false }); // Logs out without refreshing
-        router.push("/login"); // Redirects to login page
+        router.push(ROUTES.LOGIN); // Redirects to login page
       };
 
   return (
     <div>
-      <header className="bg-white dark:bg-gray-800 body-font">
+      <header className="bg-blue-100 dark:bg-gray-800 body-font">
         <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <span className="ml-3 text-xl dark:text-white font-bold">ChatHub</span>

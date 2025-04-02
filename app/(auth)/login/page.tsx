@@ -3,6 +3,7 @@
 import { signIn } from 'next-auth/react';
 import { useRouter } from "next/navigation";
 import AuthForm from '@/app/components/AuthForm';
+import { ROUTES } from '@/app/utils/constant';
 
 
 
@@ -11,7 +12,7 @@ export default function Login() {
 
   const handleLogin = async (email : string, password : string) => {
     const res = await signIn('credentials', { email, password, redirect: false });
-    if (res?.ok) router.push('/dashboard');
+    if (res?.ok) router.push(ROUTES.DASHBOARD);
     else alert('Invalid credentials');
   };
 
