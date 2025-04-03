@@ -14,12 +14,20 @@ const Navbar = () => {
     const handleLogout = async () => {
         await signOut({ redirect: false }); // Logs out without refreshing
         router.push(ROUTES.LOGIN); // Redirects to login page
-      };
+    };
+
+    const handleNavigation = async () => {
+       if(signedInUSerName !== "") {
+          router.push(ROUTES.DASHBOARD)
+       } else {
+        router.push(ROUTES.LOGIN); // Redirects to login page
+       }
+    }
 
   return (
     <div>
       <header className="bg-blue-100 dark:bg-gray-800 body-font">
-        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center cursor-pointer" onClick={handleNavigation}>
           <a className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
             <span className="ml-3 text-xl dark:text-white font-bold">ChatHub</span>
           </a>
